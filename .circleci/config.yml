@@ -1,0 +1,38 @@
+version: 2.1
+
+jobs:
+  compile:
+    docker:
+      - image: kylemanna/aosp:latest
+
+    environment:
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      - run:
+          name: Compile
+          command: echo "Compile"
+          environment:
+            GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.workers.max=3 -Xmx768m
+
+      - run:
+          name: Build 
+          command: mkdir build && cd build && ../test/build-oreo.sh
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - compile
+  nightly:
+    triggers:
+      - schedule:
+          cron: "4 1 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - compile
