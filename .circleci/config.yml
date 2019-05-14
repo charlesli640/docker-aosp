@@ -17,7 +17,7 @@ jobs:
 
       - run:
           name: Build 
-          command: mkdir build && cd build && ../test/build-oreo.sh
+          command: mkdir build && cd build && ../tests/build-oreo.sh
 
 
 workflows:
