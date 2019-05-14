@@ -13,9 +13,7 @@ jobs:
 
       - run:
           name: Compile
-          command: echo "Compile"
-          environment:
-            GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.workers.max=3 -Xmx768m
+          command: echo "Before Compile"
 
       - run:
           name: Build 
