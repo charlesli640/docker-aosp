@@ -18,7 +18,8 @@ jobs:
       - run:
           name: Build 
           command: mkdir build && cd build && ../tests/build-oreo.sh docker
-
+          environment:
+             USER: $(whoami)
 
 workflows:
   version: 2
