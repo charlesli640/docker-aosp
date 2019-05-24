@@ -12,13 +12,53 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
 
 # Keep the dependency list as short as reasonable
 RUN apt-get update && \
-    apt-get install -y bc bison bsdmainutils build-essential curl \
-        flex g++-multilib gcc-multilib git git-core gnupg gperf lib32ncurses5-dev \
-        lib32z-dev lib32z1-dev libesd0-dev libncurses5-dev \
-        libsdl1.2-dev libwxgtk3.0-dev libxml2-utils lzop sudo \
-        openjdk-8-jdk libssl-dev minizip perl vim \
-        pngcrush schedtool xsltproc zip unzip zlib1g-dev graphviz \
-        x11proto-core-dev libx11-dev libgl1-mesa-dev && \ 
+    apt-get install -y \
+        bc \
+        bison \
+        bsdmainutils \
+        build-essential \
+        curl \
+        flex \
+        g++-multilib \
+        gcc-multilib \
+        git \
+        git-core \
+        gnupg \
+        gperf \
+        graphviz \
+        lib32ncurses5-dev \
+        lib32stdc++6 \
+        lib32z-dev \
+        lib32z1-dev \
+        libc6-dev \
+        libesd0-dev \
+        libgl1-mesa-dev \
+        liblz4-tool \
+        libncurses5-dev \
+        libsdl1.2-dev \
+        libssl-dev \
+        libswitch-perl \
+        libwxgtk3.0-dev \
+        libx11-dev \
+        libxml-libxml-perl \
+        libxml-simple-perl \
+        libxml2-utils \
+        lzop \
+        minizip \
+        openjdk-8-jdk \
+        perl \
+        pngcrush \
+        rar \
+        schedtool \
+        squashfs-tools \
+        sudo \
+        unzip \
+        vim \
+        x11proto-core-dev \
+        xsltproc \
+        yasm \
+        zip \
+        zlib1g-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD https://commondatastorage.googleapis.com/git-repo-downloads/repo /usr/local/bin/
