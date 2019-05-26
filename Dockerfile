@@ -80,4 +80,5 @@ VOLUME ["/tmp/ccache", "/aosp"]
 WORKDIR /aosp
 
 COPY utils/docker_entrypoint.sh /root/docker_entrypoint.sh
+RUN chmod 755 /root/docker_entrypoint.sh
 ENTRYPOINT ["/root/docker_entrypoint.sh"]
