@@ -13,8 +13,7 @@ if [ "$1" = "docker" ]; then
     TEST_BRANCH=${TEST_BRANCH:-release}
     # TEST_URL=${TEST_URL:-https://android.googlesource.com/platform/manifest}
     TEST_URL=${TEST_URL:-git://codeaurora.org/platform/manifest.git}
-    TEST_MANIFEST=${TEST_MANIFEST:-LA.UM.6.3.r7-01500-sdm845.0.xml}
-    
+    TEST_MANIFEST=${TEST_MANIFEST:-LA.UM.7.3.r1-07800-sdm845.0.xml}   
     cpus=$(grep ^processor /proc/cpuinfo | wc -l)
 
     repo init -u "$TEST_URL" -m "$TEST_MANIFEST" -b "$TEST_BRANCH"
