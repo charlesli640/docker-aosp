@@ -26,6 +26,7 @@ RUN apt-get update && \
         gnupg \
         gperf \
         graphviz \
+        kmod \
         lib32ncurses5-dev \
         lib32stdc++6 \
         lib32z-dev \
