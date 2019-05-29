@@ -107,4 +107,19 @@ Tested
 * Android Marshmallow `android-6.0.1_r80`
 * Android Nougat `android-7.0.0_r14`
 
+Using in interactive mode
+-------------------------
+
+Follow below steps to run docker container interactively. Support the docker image has been created and labeled as aosp.
+In case you don't know the command, see below
+* Run command `docker build .`
+* Run command `docker image ls` to list the build image just built
+* Run command `docker image tag <IMAGE_ID> aosp`
+
+After image has been created, run command
+
+`docker run -it -v "/home/martin/huaqin/src:/aosp:rw" -e USER_ID=$UID -e GROUP_ID=$(id -g) aosp bash` to log on container bash env
+
+In the dock bash run normal huaqin build script in /aosp, like `sdm485-shipping-userdebug.sh`
+
 [Docker Compose]: https://docs.docker.com/compose
